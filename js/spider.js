@@ -11,8 +11,12 @@ function spider_start(page) {
 }
 
 function spider_continue() {
-    if (localStorage.spiderCounter == null || localStorage.spiderCounter == 0) {
-        return console.info("spider task complete!");
+    if (localStorage.spiderCounter == null) {
+        return console.info("No Spider Task"); 
+    }
+    if (localStorage.spiderCounter == 0) {
+        localStorage.removeItem("spiderCounter");
+        return console.info("Spider Task Complete!");
     }
     var result = getArticlesHref(); 
     addToLocalResults(result);
