@@ -19,6 +19,10 @@ function spider_continue() {
 }
 
 function addToLocalResults(item) {
+    if (localStorage.spiderResults == null){
+        return console.info("error when addToLocalResults(), check localStorage.spiderResults");
+    }
+
     var temp = [];
     temp = JSON.parse(localStorage.spiderResults);
     if (typeof(item)=="string"){
