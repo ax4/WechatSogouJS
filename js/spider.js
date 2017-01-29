@@ -31,7 +31,7 @@ function addToLocalResults(item) {
         temp.push(item);
     }
     else if (typeof(item)=="object"){
-        temp.concat(item);
+        temp = temp.concat(item);
     }
     else{
         return console.info("unknow typeof ", item); 
