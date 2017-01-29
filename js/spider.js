@@ -10,7 +10,7 @@ function spider_start(page) {
 
 function spider_continue() {
     if (localStorage.spiderCounter == null || localStorage.spiderCounter == 0) {
-        return console.log("spider task complete!");
+        return console.info("spider task complete!");
     }
     var result = getArticlesHref(); 
     addToLocalResults(result);
@@ -28,7 +28,7 @@ function addToLocalResults(item) {
         temp.concat(item);
     }
     else{
-        return console.log("unknow typeof ", item); 
+        return console.info("unknow typeof ", item); 
     }
 
     localStorage.spiderResults = JSON.stringify(temp);
@@ -36,7 +36,7 @@ function addToLocalResults(item) {
 
 function decreaseSpiderCounter(){
     if (localStorage.spiderCounter == null || localStorage.spiderCounter == 0){
-        return console.log("error when decreaseSpiderCounter(), check localStorage.spiderCounter"); 
+        return console.info("error when decreaseSpiderCounter(), check localStorage.spiderCounter"); 
     }
     localStorage.spiderCounter -= 1; 
 }
