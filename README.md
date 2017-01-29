@@ -17,5 +17,4 @@ getArticlesHref() //获得文章的 URL（临时的，请使用其他爬虫爬�
 
 
 ## Todo:
-* [x] loadJS after refresh the page //chrome crx
-* [ ] add Ruokuai 
+* [ ] loadJS after refresh the page 
