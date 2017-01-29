@@ -5,7 +5,7 @@ function spider_start(page) {
     var result = getArticlesHref(); 
     addToLocalResults(result);
     decreaseSpiderCounter();
-    NextPage();
+    setTimeout(NextPage,1000);
 }
 
 function spider_continue() {
@@ -15,7 +15,7 @@ function spider_continue() {
     var result = getArticlesHref(); 
     addToLocalResults(result);
     decreaseSpiderCounter();
-    NextPage();
+    setTimeout(NextPage,1000);
 }
 
 function addToLocalResults(item) {
