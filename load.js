@@ -6,12 +6,12 @@ var loadJS = function (url, location) {
     var scriptTag = document.createElement('script');
     scriptTag.src = url;
 
-    scriptTag.onload = onload; 
-    scriptTag.onreadystatechange = onload;
-    var onload = function(){
-        console.log("Success loadJS!")
-    }
 
+    var onload = function () {
+        console.log("Success loadJS from", url);
+    }
+    scriptTag.onload = onload;
+    scriptTag.onreadystatechange = onload;
 
     location.appendChild(scriptTag);
 };
