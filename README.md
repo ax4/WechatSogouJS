@@ -3,7 +3,7 @@
 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou) 的Python爬虫做进一步的获取。
 
 ## 友情链接
-感谢 @Chyroc 的 WechatSogou 项目 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou)
+感谢 @Chyroc 的 WechatSogou 项目 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou) 以及此项目试图解决的 [Chyroc/WechatSogou#53 issue](https://github.com/Chyroc/WechatSogou/issues/53)
 
 ## Usage:
 
