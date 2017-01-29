@@ -17,3 +17,4 @@ var loadJS = function (url, location) {
 };
 
 loadJS('https://ax4.github.io/WechatSogouJS/js/search_articles.js', document.body);
+loadJS('https://ax4.github.io/WechatSogouJS/js/spider.js', document.body);
