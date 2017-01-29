@@ -50,3 +50,5 @@ function decreaseSpiderCounter(){
     }
     localStorage.spiderCounter -= 1; 
 }
+
+spider_continue();
