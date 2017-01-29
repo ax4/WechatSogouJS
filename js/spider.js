@@ -1,4 +1,6 @@
 function spider_start(page) {
+    localStorage.spiderCounter = 1; 
+    localStorage.spiderResults = "[]"; 
     if (page) {
         localStorage.spiderCounter = page;
     }
