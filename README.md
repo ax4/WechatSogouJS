@@ -20,3 +20,4 @@ getArticlesHref() //获得文章的 URL（临时的，请使用其他爬虫爬�
 * [x] loadJS after refresh the page //chrome crx
 * [ ] add Ruokuai 
 * [ ] add output to File
+* [ ] Update the README!!! About how to use chrome ext
