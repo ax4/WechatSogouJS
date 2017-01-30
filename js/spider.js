@@ -54,8 +54,6 @@ function decreaseSpiderCounter() {
     localStorage.spiderCounter -= 1;
 }
 
-spider_continue();
-
 function saveToFile() {
     function download(filename, text) {
         var element = document.createElement('a');
@@ -70,4 +68,8 @@ function saveToFile() {
         document.body.removeChild(element);
     }
     download('results.json', localStorage.spiderResults);
+    localStorage.clear();
 }
+
+spider_continue();
+
