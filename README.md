@@ -21,4 +21,4 @@ getArticlesHref() //获得文章的 URL（临时的，请使用其他爬虫爬�
 * [ ] add Ruokuai 
 * [x] add output to File
 * [ ] Update the README!!! About how to use chrome ext
-* [ ] Known Case: There's possible 9 results on a page. Fix getArticlesHref()
+* [x] Known Case: There's possible 9 results on a page. Fix getArticlesHref()
