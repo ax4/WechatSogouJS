@@ -25,7 +25,15 @@
         "http://weixin.sogou.com/*"
       ],
       "js": [
-        "src/inject/inject.js"
+        "src/inject/sogou.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://mp.weixin.qq.com/*"
+      ],
+      "js": [
+        "src/inject/weixin.js"
       ]
     }
   ]
