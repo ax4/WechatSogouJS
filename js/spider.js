@@ -25,9 +25,9 @@ function spider_continue() {
         var result = getArticlesAll();
         addToLocalResults(result);
         decreaseSpiderCounter();
-    }, 1000)
+    }, 2000)
 
-    setTimeout(NextPage, 2000);
+    setTimeout(NextPage, 3000);
 }
 
 function addToLocalResults(item) {
