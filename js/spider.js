@@ -7,7 +7,7 @@ function spider_start(page) {
     if (page) {
         localStorage.spiderCounter = page;
     }
-    var result = getArticlesHref();
+    var result = getArticlesAll();
     addToLocalResults(result);
     decreaseSpiderCounter();
     setTimeout(NextPage, 1000);
@@ -21,10 +21,10 @@ function spider_continue() {
         localStorage.removeItem("spiderCounter");
         return console.info("Spider Task Complete!");
     }
-    var result = getArticlesHref();
+    var result = getArticlesAll();
     addToLocalResults(result);
     decreaseSpiderCounter();
-    setTimeout(NextPage, 1000);
+    setTimeout(NextPage, 2000);
 }
 
 function addToLocalResults(item) {
