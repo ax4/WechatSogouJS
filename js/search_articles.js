@@ -139,7 +139,7 @@ function getArticles_AccountName() {
 }
 
 function getArticlesAll(){
-    var titles = getArticlesTitle()
+    var title = getArticlesTitle()
     var href = getArticlesHref()
     var account_name = getArticles_AccountName()
     var account_href = getArticles_AccountHref()
