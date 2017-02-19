@@ -89,3 +89,27 @@ function getArticlesSummary() {
 
     return temp;
 }
+
+function getArticlesView() {
+    var temp = []
+    var view_tags = document.getElementsByClassName("s1");
+    view_tags.forEach(function (e) {
+        if (e) {
+            temp.push(e.innerHTML)
+        }
+    });
+
+    return temp;
+}
+
+function getArticlesTime() {
+    var temp = []
+    var time_tags = document.getElementsByClassName("s2");
+    time_tags.forEach(function (e) {
+        if (e) {
+            temp.push(e.innerHTML)
+        }
+    });
+
+    return temp;
+}
