@@ -137,3 +137,36 @@ function getArticles_AccountName() {
 
     return temp;
 }
+
+function getArticlesAll(){
+    var titles = getArticlesTitle()
+    var href = getArticlesHref()
+    var account_name = getArticles_AccountName()
+    var account_href = getArticles_AccountHref()
+    var summary = getArticlesSummary()
+    var view = getArticlesView()
+    var time = getArticlesTime()
+
+    var _length_test = titles.length + href.length + account_name.length + account_href.length + summary.length + view.length + time.length
+    _length_test = _length_test / 7 
+    if (_length_test!= titles.length || _length_test!=href.length || _length_test!= account_name.length || _length_test!=account_href.length || _length_test!=summary.length || _length_test!=view.length || _length_test!=time.length){
+        return alert("_length_test fail !! Miss match of items")
+    }
+
+    var temp = []
+    for (var i = 0; i<_length_test; i++){
+        //console.log(title[i], href[i], account_name[i], account_href[i], summary[i], view[i], time[i])
+        temp.push({
+            title: title[i], 
+            href: href[i], 
+            account_name: account_name[i], 
+            account_href: account_href[i], 
+            summary: summary[i], 
+            view: view[i], 
+            time: time[i]
+        })
+
+    }
+
+    return temp;
+}
