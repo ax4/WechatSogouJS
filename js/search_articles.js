@@ -24,7 +24,7 @@ function getArticlesHref() {
     return temp;
 }
 
-function getArticlesAccount() {
+function getArticlesAccountHref() {
     var temp = [];
     var a_tags = document.getElementsByTagName("a");
     var titles = [a_tags.sogou_vr_11002601_account_0,
