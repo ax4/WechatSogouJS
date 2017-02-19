@@ -109,7 +109,7 @@ function getArticlesTime() {
     var titles = [].slice.call(time_tags);
     titles.forEach(function (e) {
         if (e) {
-            temp.push(/([0-9])\d+/i.exec(e.innerHTML))
+            temp.push(/([0-9])\d+/i.exec(e.innerHTML)[0])
         }
     });
 
