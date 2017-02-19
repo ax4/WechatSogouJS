@@ -21,9 +21,12 @@ function spider_continue() {
         localStorage.removeItem("spiderCounter");
         return console.info("Spider Task Complete!");
     }
-    var result = getArticlesAll();
-    addToLocalResults(result);
-    decreaseSpiderCounter();
+    setTimeout(function () {
+        var result = getArticlesAll();
+        addToLocalResults(result);
+        decreaseSpiderCounter();
+    }, 1000)
+
     setTimeout(NextPage, 2000);
 }
 
