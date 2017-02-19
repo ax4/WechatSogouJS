@@ -93,7 +93,8 @@ function getArticlesSummary() {
 function getArticlesView() {
     var temp = []
     var view_tags = document.getElementsByClassName("s1");
-    view_tags.forEach(function (e) {
+    var titles = [].slice.call(view_tags);
+    titles.forEach(function (e) {
         if (e) {
             temp.push(e.innerHTML)
         }
@@ -105,7 +106,8 @@ function getArticlesView() {
 function getArticlesTime() {
     var temp = []
     var time_tags = document.getElementsByClassName("s2");
-    time_tags.forEach(function (e) {
+    var titles = [].slice.call(time_tags);
+    titles.forEach(function (e) {
         if (e) {
             temp.push(e.innerHTML)
         }
