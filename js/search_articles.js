@@ -115,3 +115,25 @@ function getArticlesTime() {
 
     return temp;
 }
+
+function getArticlesAccountName() {
+    var temp = [];
+    var a_tags = document.getElementsByTagName("a");
+    var titles = [a_tags.sogou_vr_11002601_account_0,
+    a_tags.sogou_vr_11002601_account_1,
+    a_tags.sogou_vr_11002601_account_2,
+    a_tags.sogou_vr_11002601_account_3,
+    a_tags.sogou_vr_11002601_account_4,
+    a_tags.sogou_vr_11002601_account_5,
+    a_tags.sogou_vr_11002601_account_6,
+    a_tags.sogou_vr_11002601_account_7,
+    a_tags.sogou_vr_11002601_account_8,
+    a_tags.sogou_vr_11002601_account_9];
+    titles.forEach(function (e) {
+        if (e) {
+            temp.push(e.innerHTML)
+        }
+    });
+
+    return temp;
+}
