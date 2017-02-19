@@ -70,17 +70,17 @@ function getArticlesTitle() {
 
 function getArticlesSummary() {
     var temp = [];
-    var a_tags = document.getElementsByTagName("a");
-    var titles = [a_tags.sogou_vr_11002601_title_0,
-    a_tags.sogou_vr_11002601_summary_1,
-    a_tags.sogou_vr_11002601_summary_2,
-    a_tags.sogou_vr_11002601_summary_3,
-    a_tags.sogou_vr_11002601_summary_4,
-    a_tags.sogou_vr_11002601_summary_5,
-    a_tags.sogou_vr_11002601_summary_6,
-    a_tags.sogou_vr_11002601_summary_7,
-    a_tags.sogou_vr_11002601_summary_8,
-    a_tags.sogou_vr_11002601_summary_9];
+    var p_tags = document.getElementsByTagName("p");
+    var titles = [p_tags.sogou_vr_11002601_summary_0,
+    p_tags.sogou_vr_11002601_summary_1,
+    p_tags.sogou_vr_11002601_summary_2,
+    p_tags.sogou_vr_11002601_summary_3,
+    p_tags.sogou_vr_11002601_summary_4,
+    p_tags.sogou_vr_11002601_summary_5,
+    p_tags.sogou_vr_11002601_summary_6,
+    p_tags.sogou_vr_11002601_summary_7,
+    p_tags.sogou_vr_11002601_summary_8,
+    p_tags.sogou_vr_11002601_summary_9];
     titles.forEach(function (e) {
         if (e) {
             temp.push(e.innerHTML)
