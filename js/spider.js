@@ -21,6 +21,10 @@ function spider_continue() {
         localStorage.removeItem("spiderCounter");
         return console.info("Spider Task Complete!");
     }
+    if (antiSpiderCheck()){
+        return console.info("sogou antispider");
+    }
+
     setTimeout(function () {
         var result = getArticlesAll();
         addToLocalResults(result);
@@ -73,6 +77,11 @@ function saveToFile() {
     download('results.json', localStorage.spiderResults);
     localStorage.clear();
 }
+
+function antiSpiderCheck(){
+    return window.location.href.includes("antispider");
+}
+
 
 spider_continue();
 
