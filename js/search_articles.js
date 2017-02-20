@@ -111,6 +111,9 @@ function getArticlesView() {
         titles.push(e.getElementsByClassName("s1")[0])
     })
 
+    while (titles.length<10){
+        titles.push(null)
+    }
     //var view_tags = document.getElementsByClassName("s1");
     //var titles = [].slice.call(view_tags);
     titles.forEach(function (e) {
@@ -134,6 +137,9 @@ function getArticlesTime() {
         titles.push(e.getElementsByClassName("s2")[0])
     })
 
+    while (titles.length<10){
+        titles.push(null)
+    }
     //var time_tags = document.getElementsByClassName("s2");
     //var titles = [].slice.call(time_tags);
     titles.forEach(function (e) {
