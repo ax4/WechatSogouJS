@@ -19,6 +19,9 @@ function getArticlesHref() {
         if (e) {
             temp.push(e.href)
         }
+        else{
+            temp.push(null)
+        }
     });
 
     return temp;
@@ -40,6 +43,9 @@ function getArticles_AccountHref() {
     titles.forEach(function (e) {
         if (e) {
             temp.push(e.href)
+        }
+        else{
+            temp.push(null)
         }
     });
 
@@ -63,6 +69,9 @@ function getArticlesTitle() {
         if (e) {
             temp.push(e.innerHTML)
         }
+        else{
+            temp.push(null)
+        }
     });
 
     return temp;
@@ -85,6 +94,9 @@ function getArticlesSummary() {
         if (e) {
             temp.push(e.innerHTML)
         }
+        else{
+            temp.push(null)
+        }
     });
 
     return temp;
@@ -98,6 +110,9 @@ function getArticlesView() {
         if (e) {
             temp.push(e.innerHTML)
         }
+        else{
+            temp.push(null)
+        }
     });
 
     return temp;
@@ -110,6 +125,9 @@ function getArticlesTime() {
     titles.forEach(function (e) {
         if (e) {
             temp.push(/([0-9])\d+/i.exec(e.innerHTML)[0])
+        }
+        else{
+            temp.push(null)
         }
     });
 
@@ -133,11 +151,15 @@ function getArticles_AccountName() {
         if (e) {
             temp.push(e.innerHTML)
         }
+        else{
+            temp.push(null)
+        }
     });
 
     return temp;
 }
 
+/* unstable, never use in spider Task */
 function getArticlesAll(){
     var title = getArticlesTitle()
     var href = getArticlesHref()
