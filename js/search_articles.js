@@ -192,7 +192,7 @@ function getArticlesAll(){
     var _length_test = title.length + href.length + account_name.length + account_href.length + summary.length + view.length + time.length
     _length_test = _length_test / 7 
     if (_length_test!= title.length || _length_test!=href.length || _length_test!= account_name.length || _length_test!=account_href.length || _length_test!=summary.length || _length_test!=view.length || _length_test!=time.length){
-        return alert("_length_test fail !! Miss match of items")
+        return alert("_length_test fail !! Miss match of items") //fixme: it should be better to stop the spider task
     }
 
     var temp = []
