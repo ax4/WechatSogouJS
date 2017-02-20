@@ -104,8 +104,15 @@ function getArticlesSummary() {
 
 function getArticlesView() {
     var temp = []
-    var view_tags = document.getElementsByClassName("s1");
-    var titles = [].slice.call(view_tags);
+    var s_p_tags = document.getElementsByClassName("s-p");
+    var s_p = [].slice.call(s_p_tags);
+    var titles = []
+    s_p.forEach(function(e){
+        titles.push(e.getElementsByClassName("s1")[0])
+    })
+
+    //var view_tags = document.getElementsByClassName("s1");
+    //var titles = [].slice.call(view_tags);
     titles.forEach(function (e) {
         if (e) {
             temp.push(e.innerHTML)
