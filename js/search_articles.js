@@ -127,8 +127,15 @@ function getArticlesView() {
 
 function getArticlesTime() {
     var temp = []
-    var time_tags = document.getElementsByClassName("s2");
-    var titles = [].slice.call(time_tags);
+    var s_p_tags = document.getElementsByClassName("s-p");
+    var s_p = [].slice.call(s_p_tags);
+    var titles = []
+    s_p.forEach(function(e){
+        titles.push(e.getElementsByClassName("s2")[0])
+    })
+
+    //var time_tags = document.getElementsByClassName("s2");
+    //var titles = [].slice.call(time_tags);
     titles.forEach(function (e) {
         if (e) {
             temp.push(/([0-9])\d+/i.exec(e.innerHTML)[0])
