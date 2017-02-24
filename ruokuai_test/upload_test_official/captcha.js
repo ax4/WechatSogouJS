@@ -5,16 +5,17 @@
 
 var rest 	 = require('restler'),
 	fs   	 = require('fs'),
-	filename = 'captcha.gif';
+	filename = 'captcha.gif',
+	settings = require('../config.js').settings;
 
 rest.post('http://api.ruokuai.com/create.json', {
 	multipart: true,
 	data: {
-		'username': 'xxx',
-		'password': 'xxx',
+		'username': settings.username,
+		'password': settings.password,
 		'typeid':'3050',
-		'softid': '4468',
-		'softkey': 'f42b9f3fe517e8806528246a922e3d1c',
+		'softid': settings.softid,
+		'softkey': settings.softkey,
 		'image': rest.file(filename, null, fs.statSync(filename).size, null, 'image/gif') // filename: 抓取回来的码证码文件
 	},
 	headers: { 
