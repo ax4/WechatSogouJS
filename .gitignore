@@ -4,3 +4,5 @@ ruokuai_test/config\.js
 ruokuai_test/base64_test/node_modules/
 
 ruokuai_test/upload_test_official/node_modules/
+
+ruokuai_test/server_test/node_modules/
