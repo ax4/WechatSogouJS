@@ -3,9 +3,9 @@
 * 注意：需要安装restler : npm install restler
 */
 
-//var rest 	 = require('restler'),
-var	fs   	 = require('fs'),
-	settings = require('./config.js');
+var rest 	 = require('restler'),
+	fs   	 = require('fs'),
+	settings = require('../config.js').settings;
 
 rest.post('http://api.ruokuai.com/create.json', {
 	multipart: true,
