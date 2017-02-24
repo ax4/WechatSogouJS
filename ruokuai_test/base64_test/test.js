@@ -20,7 +20,9 @@ rest.post('http://api.ruokuai.com/create.json', {
 	headers: { 
 		'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:24.0) Gecko/20100101 Firefox/24.0',
 		'Content-Type' : 'application/x-www-form-urlencoded' 
-	}
+	},
+	encoding:'base64'
+	
 }).on('complete', function(data) {
 	var captcha = JSON.parse(data);
 	console.log('Captcha Encoded.');
