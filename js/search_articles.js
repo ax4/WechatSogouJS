@@ -1,5 +1,7 @@
 function NextPage() {
-    window.location.href = document.getElementsByTagName("a").sogou_next.href;
+    var temp = document.getElementsByTagName("a").sogou_next.href;
+    localStorage.nextpage = temp;
+    window.location.href = temp;
 }
 
 function getArticlesHref() {
