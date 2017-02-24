@@ -5,7 +5,7 @@
 
 var rest 	 = require('restler'),
 	fs   	 = require('fs'),
-	filename = 'captcha.jpg',
+	filename = 'download.jpg',
 	settings = require('../config.js').settings;
 
 rest.post('http://api.ruokuai.com/create.json', {
