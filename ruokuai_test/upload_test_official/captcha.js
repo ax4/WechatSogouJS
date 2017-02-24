@@ -5,7 +5,7 @@
 
 var rest 	 = require('restler'),
 	fs   	 = require('fs'),
-	filename = 'captcha.gif',
+	filename = 'captcha.jpg',
 	settings = require('../config.js').settings;
 
 rest.post('http://api.ruokuai.com/create.json', {
@@ -13,7 +13,7 @@ rest.post('http://api.ruokuai.com/create.json', {
 	data: {
 		'username': settings.username,
 		'password': settings.password,
-		'typeid':'3050',
+		'typeid':'3060',
 		'softid': settings.softid,
 		'softkey': settings.softkey,
 		'image': rest.file(filename, null, fs.statSync(filename).size, null, 'image/gif') // filename: 抓取回来的码证码文件
