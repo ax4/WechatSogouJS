@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
     res.send("helloworld");
 });
 
-app.get('/long', timeout('10s'),function (req, res) {
+app.get('/long', timeout('20s'),function (req, res) {
     var img = decodeURIComponent(req.query.img);
     //console.log(img, typeof(img)); //debug use
     Ruokuai.Captcha(img, (e)=>{res.send(e);});
