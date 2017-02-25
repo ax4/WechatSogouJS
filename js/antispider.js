@@ -27,4 +27,6 @@ function sendRuokuai(imgBase64){
 function autoFill(){
     var image = getURI(); 
     var entry = sendRuokuai(image); 
+    document.getElementById("seccodeInput").value = entry; 
+    setTimeout(()=>{document.getElementById("submit").click()},100); 
 }
