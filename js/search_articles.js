@@ -1,7 +1,14 @@
 function NextPage() {
-    var temp = document.getElementsByTagName("a").sogou_next.href;
-    localStorage.nextpage = temp;
-    window.location.href = temp;
+    var temp = document.getElementsByTagName("a")
+
+    if (!temp) {
+        window.location.reload()
+    }
+    else {
+        temp = temp.sogou_next.href;
+        localStorage.nextpage = temp;
+        window.location.href = temp;
+    }
 }
 
 function getArticlesHref() {
