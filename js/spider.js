@@ -82,6 +82,4 @@ function antiSpiderCheck(){
     return window.location.href.includes("antispider");
 }
 
-
 spider_continue();
-
