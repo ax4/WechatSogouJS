@@ -22,7 +22,8 @@ function spider_continue() {
         return console.info("Spider Task Complete!");
     }
     if (antiSpiderCheck()){
-        return console.info("sogou antispider");
+        console.info("sogou antispider");
+        return autoFill();
     }
 
     setTimeout(function () {
