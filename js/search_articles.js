@@ -1,11 +1,11 @@
 function NextPage() {
-    var temp = document.getElementsByTagName("a")
+    var temp = document.getElementsByTagName("a").sogou_next; 
 
     if (!temp) {
         window.location.reload()
     }
     else {
-        temp = temp.sogou_next.href;
+        temp = temp.href;
         localStorage.nextpage = temp;
         window.location.href = temp;
     }
