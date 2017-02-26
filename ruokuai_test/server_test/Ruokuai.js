@@ -30,7 +30,8 @@ function Captcha(data, cb = function(res){console.log("Received", res);}) {
             }
         }).on('complete', function (res) {
             var captcha = JSON.parse(res);
-            console.log('Captcha Encoded.');
+            console.log('Captcha Encoded.', res);
+            fs.unlink("./temp/"+ filename);
             cb(captcha); 
         });
     });
