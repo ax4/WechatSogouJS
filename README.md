@@ -7,7 +7,7 @@
 
 ## Usage:
 
-打开浏览器 console, 复制 load.js 中的代码到 console 中，按 enter.
+~~打开浏览器 console, 复制 load.js 中的代码到 console 中，按 enter.~~ Deprecated
 
 ```javascript
 NextPage() //访问下一页
@@ -18,7 +18,9 @@ getArticlesHref() //获得文章的 URL（临时的，请使用其他爬虫爬�
 
 ## Todo:
 * [x] loadJS after refresh the page //chrome crx
-* [ ] add Ruokuai 
+* [x] add Ruokuai 
 * [x] add output to File
-* [ ] Update the README!!! About how to use chrome ext
-* [x] Known Case: There's possible 9 results on a page. Fix getArticlesHref()
+* [ ] ~~Update the README!!! About how to use chrome ext~~ Deprecated => Move onto NW.js or Electron
+* [ ] #Important# Move onto NW.js or Electron ! 
+## Bug: 
+* [ ] autoFill() trigger problem
