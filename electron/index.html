@@ -17,6 +17,10 @@
   const webview = document.getElementById('webview')
   webview.addEventListener('console-message', (e) => { console.log('Guest page logged a message:', e.message) })
 
+  webview.addEventListener('dom-ready', () => {
+    webview.openDevTools()
+  })
+
   const {shell} = require('electron')
   webview.addEventListener('new-window', (e) => {
     const protocol = require('url').parse(e.url).protocol
@@ -24,6 +28,7 @@
       shell.openExternal(e.url)
     }
   })
+
 </script>
 
 </html>
