@@ -14,14 +14,14 @@ let session
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences:{preload:"./preload.js"}})
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: 'weixin.sogou.com',
-    protocol: 'http:',
-    //pathname: path.join(__dirname, 'index.html'),
-    //protocol: 'file:',
+    //pathname: 'weixin.sogou.com',
+    //protocol: 'http:',
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
     slashes: true
   }))
 
@@ -36,7 +36,7 @@ function createWindow () {
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
   
-  mainWindow.webContents.executeJavaScript('require("./new/pc/js/suggestion.min.js?v=20161222")', true, (result)=>{console.log(result)})
+  mainWindow.webContents.executeJavaScript('window.location.href', true, (result)=>{console.log(result)})
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
