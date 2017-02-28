@@ -29,7 +29,7 @@ chrome.extension.sendMessage({}, function (response) {
 		location.appendChild(scriptTag);
 	};
 
-	loadJS('https://ax4.github.io/WechatSogouJS/js/search_articles.js', document.body);
-	loadJS('https://ax4.github.io/WechatSogouJS/js/spider.js', document.body);
-	loadJS('https://ax4.github.io/WechatSogouJS/js/antispider.js', document.body);
+	loadJS('https://ax4.github.io/WechatSogouJS/chrome/js/search_articles.js', document.body);
+	loadJS('https://ax4.github.io/WechatSogouJS/chrome/js/spider.js', document.body);
+	loadJS('https://ax4.github.io/WechatSogouJS/chrome/js/antispider.js', document.body);
 });
