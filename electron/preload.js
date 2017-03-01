@@ -17,6 +17,9 @@ window.onload = function() {
       console.info("start autofill the seccode ....")
       autoFill()
     }
+    else{
+      spider_continue()
+    }
 };
 
 if (typeof module === 'object') {window.module = module; module = undefined;}

@@ -16,7 +16,7 @@ spider_start = function (page) {
     setTimeout(NextPage, 1000);
 }
 
-function spider_continue() {
+spider_continue = function () {
     if (localStorage.spiderCounter == null) {
         return console.info("No Spider Task");
     }
@@ -59,7 +59,7 @@ function addToLocalResults(item) {
     localStorage.spiderResults = JSON.stringify(temp);
 }
 
-function decreaseSpiderCounter() {
+function decreaseSpiderCounter () {
     if (localStorage.spiderCounter == null || localStorage.spiderCounter == 0) {
         return console.info("error when decreaseSpiderCounter(), check localStorage.spiderCounter");
     }
@@ -88,4 +88,4 @@ function antiSpiderCheck(){
 }
 
 //spider_continue();
-document.onreadystatechange = spider_continue; 
+//document.onreadystatechange = spider_continue; 
