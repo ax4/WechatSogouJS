@@ -31,8 +31,8 @@ function sendRuokuai(imgBase64){
 autoFill = function () {
     var image = getURI();
     //var entry = sendRuokuai(image); 
-    Captcha(image, (entry) => {
-        document.getElementById("seccodeInput").value = entry;
+    Captcha(image, (res) => {
+        document.getElementById("seccodeInput").value = res.Result;
         setTimeout(() => { document.getElementById("submit").click() }, 100);
     })
 

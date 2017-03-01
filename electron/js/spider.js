@@ -26,7 +26,8 @@ function spider_continue() {
     }
     if (antiSpiderCheck()){
         console.info("sogou antispider");
-        return autoFill();
+        //return autoFill();
+        return; 
     }
 
     setTimeout(function () {

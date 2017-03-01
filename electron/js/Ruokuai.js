@@ -4,7 +4,8 @@ var rest = require('restler'),
     Base64File = require('js-base64-file'),
     shortid = require('shortid');
 
-const path = `${__dirname}/temp/`;
+const path = `${__dirname}/../temp/`;
+console.log("Ruokuai temp jpg file in",path);
 
 function Captcha(data, cb = function(res){console.log("Received", res);}) {
     if (data.includes("base64")) {

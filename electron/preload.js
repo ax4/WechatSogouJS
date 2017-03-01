@@ -12,6 +12,11 @@ window.onload = function() {
     catch(err){
       document.body.appendChild(script);
     }
+
+    if (window.location.href.includes("antispider")){
+      console.info("start autofill the seccode ....")
+      autoFill()
+    }
 };
 
 if (typeof module === 'object') {window.module = module; module = undefined;}
