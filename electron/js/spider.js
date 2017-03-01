@@ -18,10 +18,13 @@ spider_start = function (page) {
 
 spider_continue = function () {
     if (localStorage.spiderCounter == null) {
+        //window.location.hash += "spider_done"
+        //window.location.href += "&spider_done"; //tag spider done and reload the page
         return console.info("No Spider Task");
     }
     if (localStorage.spiderCounter == 0) {
         localStorage.removeItem("spiderCounter");
+        window.location.href += "&spider_done"; //tag spider done and reload the page
         return console.info("Spider Task Complete!");
     }
     if (antiSpiderCheck()){

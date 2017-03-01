@@ -3,6 +3,7 @@ function NextPage() {
 
     if (!temp) {
         window.location.reload()
+        //window.location.href += "&spider_done"; //hash and reload the page
     }
     else {
         temp = temp.href;

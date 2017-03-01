@@ -19,6 +19,12 @@
 
   webview.addEventListener('dom-ready', () => {
     webview.openDevTools()
+    var href = webview.src; 
+    //console.log("webview at", href); 
+    if (href.includes("&spider_done")){
+      console.log("finish the spider task, waiting for the next"); 
+      webview.src = "http://weixin.sogou.com"
+    }
   })
 
   const {shell} = require('electron')
@@ -28,6 +34,7 @@
       shell.openExternal(e.url)
     }
   })
+
 
 </script>
 
