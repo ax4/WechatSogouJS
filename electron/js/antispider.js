@@ -33,7 +33,14 @@ autoFill = function () {
     //var entry = sendRuokuai(image); 
     Captcha(image, (res) => {
         document.getElementById("seccodeInput").value = res.Result;
-        setTimeout(() => { document.getElementById("submit").click() }, 100);
+        setTimeout(() => { document.getElementById("submit").click() }, 200);
+        setTimeout(()=>{
+            //retry if the Captcha get wrong
+            var error = document.getElementById("error-tips")
+            if (error){
+                autoFill()
+            }
+        },2000)
     })
 
 }
