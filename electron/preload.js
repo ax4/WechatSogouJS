@@ -1,5 +1,7 @@
 // injection technique borrowed from http://stackoverflow.com/questions/840240/injecting-jquery-into-a-page-fails-when-using-google-ajax-libraries-api
 require('./renderer.js')
+require('./js/antispider.js')
+require('./js/spider.js')
 
 window.onload = function() {
     console.log("hello this is from manipulateGoogle");
