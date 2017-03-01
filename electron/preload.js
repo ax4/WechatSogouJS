@@ -14,8 +14,9 @@ window.onload = function() {
     }
 
     if (window.location.href.includes("antispider")){
-      console.info("start autofill the seccode ....")
-      autoFill()
+      console.info("start autofill the seccode .... in 2s")
+      //autoFill()
+      setTimeout(autoFill, 2000)
     }
     else{
       spider_continue()
