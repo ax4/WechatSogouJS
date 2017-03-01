@@ -6,21 +6,6 @@
 感谢 @Chyroc 的 WechatSogou 项目 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou) 以及此项目试图解决的 [Chyroc/WechatSogou#53 issue](https://github.com/Chyroc/WechatSogou/issues/53)
 
 ## Usage:
+WechatSogouJS almost done! I will update the README && Usage soon! 
 
-~~打开浏览器 console, 复制 load.js 中的代码到 console 中，按 enter.~~ Deprecated
-
-```javascript
-NextPage() //访问下一页
-getArticlesAccount() //获得文章的公众号
-getArticlesHref() //获得文章的 URL（临时的，请使用其他爬虫爬取文章内容）
-```
-
-
-## Todo:
-* [x] loadJS after refresh the page //chrome crx
-* [x] add Ruokuai 
-* [x] add output to File
-* [ ] ~~Update the README!!! About how to use chrome ext~~ Deprecated => Move onto NW.js or Electron
-* [ ] #Important# Move onto NW.js or Electron ! 
-## Bug: 
-* [ ] autoFill() trigger problem
+If you are interested, contact me, thx! 
