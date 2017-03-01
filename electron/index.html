@@ -15,7 +15,7 @@
   // You can also require other files to run in this process
   //require('./renderer.js')
   const webview = document.getElementById('webview')
-  webview.addEventListener('console-message', (e) => { console.log('Guest page logged a message:', e.message) })
+  //webview.addEventListener('console-message', (e) => { console.log('Guest page logged a message:', e.message) })
 
   webview.addEventListener('dom-ready', () => {
     webview.openDevTools()
