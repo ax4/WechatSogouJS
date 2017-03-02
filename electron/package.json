@@ -20,6 +20,7 @@
     "electron": "^1.4.1"
   },
   "dependencies": {
+    "anyproxy": "^3.10.4",
     "js-base64-file": "^1.0.1",
     "restler": "^3.4.0",
     "shortid": "^2.2.6"
