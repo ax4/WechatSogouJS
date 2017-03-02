@@ -24,7 +24,7 @@ spider_continue = function () {
     }
     if (localStorage.spiderCounter == 0) {
         localStorage.removeItem("spiderCounter");
-        setTimeout(function(){window.location.href += "&spider_done";},2000)
+        setTimeout(function(){window.location.href = "http://weixin.sogou.com/" + "&spider_done";},2000)
         //window.location.href += "&spider_done"; //tag spider done and reload the page
         return console.info("Spider Task Complete!");
     }
