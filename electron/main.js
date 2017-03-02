@@ -90,6 +90,6 @@ var options = {
     //throttle      : 10,    // optional, speed limit in kb/s
     disableWebInterface : false, //optional, set it when you don't want to use the web interface
     setAsGlobalProxy : false, //set anyproxy as your system proxy
-    silent        : false //optional, do not print anything into terminal. do not set it when you are still debugging.
+    silent        : true //optional, do not print anything into terminal. do not set it when you are still debugging.
 };
 new proxy.proxyServer(options);
