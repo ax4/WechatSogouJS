@@ -1,0 +1,16 @@
+{
+  "name": "nightmareCrawler",
+  "version": "1.0.0",
+  "description": "This is a nightmare approach to JS crawler",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example.js",
+    "start": "node main.js"
+  },
+  "author": "ax4",
+  "license": "ISC",
+  "dependencies": {
+    "nightmare": "^2.10.0",
+    "nightmare-iframe-manager": "0.0.4"
+  }
+}
