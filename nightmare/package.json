@@ -10,6 +10,7 @@
   "author": "ax4",
   "license": "ISC",
   "dependencies": {
+    "anyproxy": "^3.10.4",
     "nightmare": "^2.10.0",
     "nightmare-iframe-manager": "0.0.4"
   }
