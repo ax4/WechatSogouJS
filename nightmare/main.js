@@ -1,5 +1,9 @@
 var Nightmare = require('nightmare');		
 var nightmare = Nightmare({
+  switches: {
+    'proxy-server': '127.0.0.1:8001',
+    'ignore-certificate-errors': true
+  },
   show: true,
   webPreferences: {
     webSecurity: false,
@@ -22,3 +26,5 @@ nightmare
   .catch(function (error) {
     console.error('Search failed:', error);
   });
+
+require('./proxyServer.js')
