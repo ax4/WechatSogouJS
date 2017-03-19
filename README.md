@@ -27,7 +27,7 @@ If you are interested, contact me, thx!
     - [ ] grab the account page
     - [ ] pass the Captcha
 
-## Features of All Different Approachv (current versions)
+## Features of All Different Approach (current versions)
 - Chrome Ext
     - easy to code 
     - easy to install 
