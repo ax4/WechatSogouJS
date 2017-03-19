@@ -9,3 +9,14 @@
 WechatSogouJS almost done! I will update the README && Usage soon! 
 
 If you are interested, contact me, thx! 
+
+## Todo:
+- PC web 
+    - [x] article search     
+    - [ ] account search
+    - [x] manual login with QQ / wechat QR 
+- WAP web
+    - [ ] article search
+    - [ ] account search
+    - [ ] auto login with QQ
+    - [ ] clean cookie when blocked by antispider
