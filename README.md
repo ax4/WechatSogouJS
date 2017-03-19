@@ -5,10 +5,44 @@
 ## 友情链接
 感谢 @Chyroc 的 WechatSogou 项目 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou) 以及此项目试图解决的 [Chyroc/WechatSogou#53 issue](https://github.com/Chyroc/WechatSogou/issues/53)
 
-## Usage:
-WechatSogouJS almost done! I will update the README && Usage soon! 
+## Usage of Electron version:
+1. Make a `config.js` file: 
+```js
+// this is your config.js file
+var settings = {
+    username: 'your_Ruokuai_username',
+    password: 'your_Ruokuai_password',
+    softid: 'your_Ruokuai_softid',
+    softkey: 'your_Ruokuai_softkey'
+};
 
-If you are interested, contact me, thx! 
+exports.settings = settings; 
+
+```
+2. Save `config.js` under the folder `WechatSogouJS/electron`
+
+
+3. Enter the `electron` folder and install the dependency with npm
+```bash
+cd electron 
+npm install     
+
+```
+
+4. Start the browser
+```bash
+npm start
+```
+
+5. Type-in your query keyword, and click "Search Articles" 
+6. On the left-hand-console, type-in
+```js
+spider_start(n) //'n' is how many pages you want, do not just type 'n'
+```
+7. After the spider finish its job, in the same console, type-in
+```js
+saveToFile()
+```
 
 ## Todo:
 - weixin.sogou.com PC web 
