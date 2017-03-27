@@ -9,9 +9,7 @@ var nightmare = Nightmare({
 
 nightmare
   .goto('http://weixin.sogou.com')
-  .evaluate(function () {
-    return document.querySelector('#login_menu').style;
-  })
+  .click("#loginBtn")
   .then(function (result) {
     //console.log(result);
     console.log("Login using the browser")
