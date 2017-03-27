@@ -5,6 +5,16 @@
 ## 友情链接
 感谢 @Chyroc 的 WechatSogou 项目 [Chyroc/WechatSogou](https://github.com/Chyroc/WechatSogou) 以及此项目试图解决的 [Chyroc/WechatSogou#53 issue](https://github.com/Chyroc/WechatSogou/issues/53)
 
+## 进度与方向
+1. 目前在框架选择上，准备放弃 Chrome Ext \ PhantomJS 框架。
+
+Electron 框架会做简单维护，但是不会再开发新的了。
+
+一切最新的开发，会转移到 NightmareJS 框架上。
+
+2. 在爬取对象选择上，准备放弃 weixin.sogou.com PC 版本，转而开发 wap 版本为主 & pc 版本为辅助的模式。
+
+
 ## Usage of Electron version:
 1. Make a `config.js` file: 
 ```js
