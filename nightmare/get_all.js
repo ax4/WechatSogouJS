@@ -115,108 +115,110 @@ Nightmare.action('emulateDevice',
       }, recur)
       .then(function(result){
         recur(0);
-      })
-      .wait(300)   //wait for the response of click()
-      .then(function(result){
-        console.log('result:',result);
-      });
+        return nightmare
+        .wait(5000)     //wait until clicking 10 times : 10*0.5 = 5000
+        .evaluate(function () {     //get account information
+          var get_gzh_name = function(gzh){
+            var obj = gzh.querySelector('.gzh-tit');
+            if (obj){
+              return obj.textContent;
+            }
+            else{
+              return null;
+            }
+            //return gzh.querySelector('.gzh-tit').textContent;
+          }
+          var get_gzh_id = function(gzh){
+            var obj = gzh.querySelector('.gzh-name');
+            if (obj){
+              return obj.textContent.slice(4);
+            }
+            else{
+              return null;
+            }
+            //return gzh.querySelector('.gzh-name').textContent.slice(4);  //
+          }
+          var get_gzh_month = function(gzh){
+            var obj = gzh.querySelector('.gzh-num');
+            if (obj) {
+              return obj.textContent.match(/\d+/)[0];
+            }
+            else{
+              return null;
+            }
+            //return gzh.querySelector('.gzh-num').textContent.match(/\d+/)[0];
+          }
+          var get_gzh_intro = function(gzh, text){
+            // 'dd' and text has the same size and use the same index 6/6/2017
+            // however, it may changes, if weixin.sogou make some change to its templates
+            var obj = gzh.querySelectorAll('dd');
+              for(var i = 0; i < text.length; i++){
+                if(text[i].textContent.search(/功能/)!==-1){
+                  return obj[i].textContent;
+                }
+            }
+            return null;
+          }
+          var get_gzh_auth = function(gzh, text){
+            // 'dd' and text ('dt') has the same size and use the same index 6/6/2017
+            // however, it may changes, if weixin.sogou make some change to its templates
+            var obj = gzh.querySelectorAll('dd');
+              for(var i = 0; i < text.length; i++){
+                if(text[i].textContent.search(/认证/)!==-1){
+                  return obj[i].textContent;
+                }
+            }
+            return null;
+          }
+          var get_gzh_recent = function(gzh){
+            var obj = gzh.querySelector('dl dd a');
+            if(obj){
+              return obj.href;
+            }
+            else{
+              return null;
+            }
+          }
+          var get_gzh_recent_date = function(gzh){
+            //parseInt(all_gzh[i].querySelector('dl dd a span').textContent.match(/\d+/)[0])||null}
+            var obj = gzh.querySelector('dl dd a span');
+            if (obj){
+              return parseInt(obj.textContent.match(/\d+/)[0])
+            }
+            else{
+              return null;
+            }
+          }
+          var gzh_list = Array();
+          var all_gzh = document.querySelectorAll('.wx-news-list2 li');
+          for(var i = 0; i < all_gzh.length; i++){
+            var obj = {name: get_gzh_name(all_gzh[i]), id: get_gzh_id(all_gzh[i]), month_num: get_gzh_month(all_gzh[i]),
+            recent_href: get_gzh_recent(all_gzh[i]), recent_date: get_gzh_recent_date(all_gzh[i]) };
+            var text = all_gzh[i].querySelectorAll('dt');
+            obj['intro'] = get_gzh_intro(all_gzh[i], text);
+            obj['auth'] = get_gzh_auth(all_gzh[i], text);
+            gzh_list.push(obj);
+          }
+          console.log(gzh_list);
+          return gzh_list;
+        })
+        .then(function(res){
+          console.log("gzh_list is :\n", res)
+        })
+      })  //recur+get data   from line 116
       console.log('hahaha');
     })
 
     ////////////////////
-    .evaluate(function () {
-      var get_gzh_name = function(gzh){
-        var obj = gzh.querySelector('.gzh-tit');
-        if (obj){
-          return obj.textContent;
-        }
-        else{
-          return null;
-        }
-        //return gzh.querySelector('.gzh-tit').textContent;
-      }
-      var get_gzh_id = function(gzh){
-        var obj = gzh.querySelector('.gzh-name');
-        if (obj){
-          return obj.textContent.slice(4);
-        }
-        else{
-          return null;
-        }
-        //return gzh.querySelector('.gzh-name').textContent.slice(4);  //
-      }
-      var get_gzh_month = function(gzh){
-        var obj = gzh.querySelector('.gzh-num');
-        if (obj) {
-          return obj.textContent.match(/\d+/)[0];
-        }
-        else{
-          return null;
-        }
-        //return gzh.querySelector('.gzh-num').textContent.match(/\d+/)[0];
-      }
-      var get_gzh_intro = function(gzh, text){
-        // 'dd' and text has the same size and use the same index 6/6/2017
-        // however, it may changes, if weixin.sogou make some change to its templates
-        var obj = gzh.querySelectorAll('dd');
-          for(var i = 0; i < text.length; i++){
-            if(text[i].textContent.search(/功能/)!==-1){
-              return obj[i].textContent;
-            }
-        }
-        return null;
-      }
-      var get_gzh_auth = function(gzh, text){
-        // 'dd' and text ('dt') has the same size and use the same index 6/6/2017
-        // however, it may changes, if weixin.sogou make some change to its templates
-        var obj = gzh.querySelectorAll('dd');
-          for(var i = 0; i < text.length; i++){
-            if(text[i].textContent.search(/认证/)!==-1){
-              return obj[i].textContent;
-            }
-        }
-        return null;
-      }
-      var get_gzh_recent = function(gzh){
-        var obj = gzh.querySelector('dl dd a');
-        if(obj){
-          return obj.href;
-        }
-        else{
-          return null;
-        }
-      }
-      var get_gzh_recent_date = function(gzh){
-        //parseInt(all_gzh[i].querySelector('dl dd a span').textContent.match(/\d+/)[0])||null}
-        var obj = gzh.querySelector('dl dd a span');
-        if (obj){
-          return parseInt(obj.textContent.match(/\d+/)[0])
-        }
-        else{
-          return null;
-        }
-      }
-      var gzh_list = Array();
-      var all_gzh = document.querySelectorAll('.wx-news-list2 li');
-      for(var i = 0; i < all_gzh.length; i++){
-        var obj = {name: get_gzh_name(all_gzh[i]), id: get_gzh_id(all_gzh[i]), month_num: get_gzh_month(all_gzh[i]),
-        recent_href: get_gzh_recent(all_gzh[i]), recent_date: get_gzh_recent_date(all_gzh[i]) };
-        var text = all_gzh[i].querySelectorAll('dt');
-        obj['intro'] = get_gzh_intro(all_gzh[i], text);
-        obj['auth'] = get_gzh_auth(all_gzh[i], text);
-        gzh_list.push(obj);
-      }
-      console.log(gzh_list);
-      return gzh_list;
-    })
-		.then(function(res){
-      console.log("gzh_list is :\n", res)
-    })
+
+
 	})
 	.then(function() {
+    /*
     	nightmare.end(function() {
       	console.log('done with url: ', url);
     	})
+    */
     });
 };
 
