@@ -57,7 +57,7 @@ Nightmare.action('emulateDevice',
         return -1;   //finish: click_=8
       }
     }, click_)
-    .wait(500)
+    .wait(1000)
     .then(function(result){
       if(result==-1){
         return -1;
@@ -116,7 +116,7 @@ Nightmare.action('emulateDevice',
       .then(function(result){
         recur(0);
         return nightmare
-        .wait(5000)     //wait until clicking 10 times : 10*0.5 = 5000
+        .wait(10000)     //wait until clicking 10 times : 10*0.5 = 5000
         .evaluate(function () {     //get account information
           var get_gzh_name = function(gzh){
             var obj = gzh.querySelector('.gzh-tit');
