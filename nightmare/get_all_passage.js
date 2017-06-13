@@ -216,7 +216,7 @@ Nightmare.action('emulateDevice',
             };
 
             var get_gzh = function(p){
-              var obj = p.querySelectorAll('p .s2');
+              var obj = p.querySelector('p .s2');
               /*
               for(var i = 0; i < obj.length; i++){
                 if(obj[i].getAttribute('class') == "time"){
