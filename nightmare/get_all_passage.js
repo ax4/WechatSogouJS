@@ -171,7 +171,7 @@ Nightmare.action('emulateDevice',
         //document.getElementsByClassName("btn-search")[0].click();
         return query_type;
       }, query_type, query_kw)
-      .wait("#next_page")   //bottom elemment: next_page
+      .wait(100)   //bottom elemment: next_page
       .click("#resetbtn")
       .then(function(){
         return nightmare
