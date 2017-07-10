@@ -4,7 +4,7 @@ const url = "http://weixin.sogou.com";
 var Nightmare = require('nightmare');
 var nightmare = Nightmare({ show: true });
 var query_type = 'a',
-    query_kw = 'thezoomin';
+    query_kw = 'rmrbwx';
 
 nightmare
   .goto(url)
@@ -30,12 +30,16 @@ nightmare
    }, query_type, query_kw)
    .wait(1000)
    .evaluate(function(){
-     obj = document.querySelector('.mun')
-     if(obj){
+     obj0 = document.querySelector('.mun')
+     obj1 = document.querySelectorAll('.info')
+     if(obj0){
        return parseInt(document.querySelector('.mun').textContent.match(/\d/g).join(''));
      }
+     else if(obj1){
+       return parseInt(document.querySelectorAll('.info').length);
+     }
      else{
-       return 10;
+       return parseInt(0)
      }
    })
   .end()
