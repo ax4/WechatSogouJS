@@ -31,8 +31,12 @@ nightmare
      return 1
    }, query_type, query_kw)
    .wait(500)
-   .type("#date_start", query_date)
-   .type("#date_end", query_date)
+   .evaluate(function(query_date){
+    //   .type("#date_start", query_date)
+   // .type("#date_end", query_date)
+      document.querySelector("#date_start").value = query_date;
+      document.querySelector("#date_end").value = query_date;
+   }, query_date)
    .click("#time_enter")
    .wait(500)
    .evaluate(function(query_kw){
