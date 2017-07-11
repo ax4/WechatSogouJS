@@ -45,15 +45,19 @@ nightmare
    .click("#search_enter")
    .wait(500)
    .evaluate(function(){
-     obj = document.querySelector('.mun')
-     if(obj){
+     obj0 = document.querySelector('.mun')
+     obj1 = document.querySelectorAll('.txt-box')
+     if(obj0){
        return parseInt(document.querySelector('.mun').textContent.match(/\d/g).join(''));
      }
+     else if(obj1){
+       return parseInt(document.querySelectorAll('.txt-box').length);
+     }
      else{
-       return 10;
+       return parseInt(0)
      }
    })
-  //.end()
+  .end()
   .then(function (result) {
     console.log(result);
   })
